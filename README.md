@@ -1,14 +1,6 @@
-## Rewrite recipe starter
+## Rewrite SQL recipe
 
-This repository serves as a template for building your own recipe JARs and publishing them to a repository where they can be applied on [public.moderne.io](https://public.moderne.io) against all of the public OSS code that is included there.
-
-We've provided a sample recipe (NoGuavaListsNewArray) and a sample test class. Both of these exist as placeholders, and they should be replaced by whatever recipe you are interested in writing.
-
-To begin, fork this repository and customize it by:
-
-1. Changing the root project name in `settings.gradle.kts`.
-2. Changing the `group` in `build.gradle.kts`.
-3. Changing the package structure from `com.yourorg` to whatever you want.
+This repository serves as a Rewrite SQL recipe.
 
 ## Detailed Guide
 
@@ -34,13 +26,13 @@ In a Maven project's pom.xml, make your recipe module a plugin dependency:
                 <version>4.38.0</version>
                 <configuration>
                     <activeRecipes>
-                        <recipe>com.yourorg.NoGuavaListsNewArrayList</recipe>
+                        <recipe>com.asvoip.rewrite.NoGuavaListsNewArrayList</recipe>
                     </activeRecipes>
                 </configuration>
                 <dependencies>
                     <dependency>
-                        <groupId>com.yourorg</groupId>
-                        <artifactId>rewrite-recipe-starter</artifactId>
+                        <groupId>com.asvoip.rewrite</groupId>
+                        <artifactId>rewrite-sql-recipe</artifactId>
                         <version>0.1.0-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
@@ -65,11 +57,11 @@ repositories {
 }
 
 dependencies {
-    rewrite("com.yourorg:rewrite-recipe-starter:0.1.0-SNAPSHOT")
+    rewrite("com.asvoip.rewrite:rewrite-sql-recipe:0.1.0-SNAPSHOT")
 }
 
 rewrite {
-    activeRecipe("com.yourorg.NoGuavaListsNewArrayList")
+    activeRecipe("com.asvoip.rewrite.NoGuavaListsNewArrayList")
 }
 ```
 

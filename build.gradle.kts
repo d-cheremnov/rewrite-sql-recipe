@@ -30,8 +30,8 @@ java {
 }
 
 // Set as appropriate for your organization
-group = "com.yourorg"
-description = "Rewrite recipes."
+group = "com.asvoip.rewrite"
+description = "Rewrite SQL recipes."
 
 repositories {
     mavenLocal()
@@ -69,6 +69,8 @@ dependencies {
 
     testImplementation("org.openrewrite:rewrite-test")
     testImplementation("org.assertj:assertj-core:latest.release")
+
+    testRuntimeOnly("com.google.guava:guava:31.1-jre")
 }
 
 tasks.named<Test>("test") {
@@ -85,9 +87,9 @@ tasks.named<JavaCompile>("compileJava") {
 }
 
 configure<ContactsExtension> {
-    val j = Contact("team@moderne.io")
-    j.moniker("Team Moderne")
-    people["team@moderne.io"] = j
+    val j = Contact("d.cheremnov@asvoip.com")
+    j.moniker("Asvoip Team")
+    people["d.cheremnov@asvoip.com"] = j
 }
 
 configure<PublishingExtension> {
