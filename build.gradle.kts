@@ -83,7 +83,7 @@ tasks.withType<JavaCompile>().configureEach {
     options.compilerArgs.add("-parameters")
 }
 tasks.named<JavaCompile>("compileJava") {
-    options.release.set(8)
+    options.release.set(17)
 }
 
 configure<ContactsExtension> {
